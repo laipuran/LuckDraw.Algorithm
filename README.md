@@ -1,0 +1,2 @@
+# LuckDraw.Shared
+ Share project
