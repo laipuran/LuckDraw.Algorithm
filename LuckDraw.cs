@@ -40,7 +40,6 @@ namespace LuckDraw
         }
         public static string Getter(int number, int max)
         {
-
             int[] array = new int[number];
             int[] check = new int[max];
             Array.Clear(array, 0, number);
