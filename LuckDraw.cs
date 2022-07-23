@@ -6,15 +6,17 @@ namespace LuckDraw
     public class Union
     {
         public int number;
-        public string message;
+        public string message = "";
     };
     public class Algorithm
     {
         public static Union Parser(string str, int max)            // String转换成Int
         {
-            Union union = new Union();
-            union.number = 0;
-            union.message = "";
+            Union union = new()
+            {
+                number = 0,
+                message = ""
+            };
             int number;
             try
             {
@@ -25,7 +27,7 @@ namespace LuckDraw
                 }
                 if (number > max)
                 {
-                    throw new MyEx("输入的数字超过总人数！");
+                    throw new MyEx("输入的数字超过最大值" + max + "！");
                 }
             }
             catch (Exception Ex)
@@ -44,7 +46,7 @@ namespace LuckDraw
             Array.Clear(array, 0, number);
             Array.Clear(check, 0, max);
 
-            Random r = new Random();
+            Random r = new();
             for (int i = 0; i < number; i++)
             {
                 int temp = r.Next(1, max + 1);
@@ -97,7 +99,7 @@ namespace LuckDraw
                     }
                 }
             }
-            
+
             return "被抽中的幸运同学：\n" + string.Join("\n", array);
         }
     }
